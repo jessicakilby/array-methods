@@ -9,11 +9,23 @@ function print(message){
   var el = document.getElementById('planets');
   el.innerHTML = message;
 }
+
 planets.forEach(print);
-html = "<div>" + planets.join(", ") + "</div>";
+html = `<div>${planets.join(", ")}</div>`;
 print(html);
 console.log("Print to div array: ", html);
 
+//A shorter way to do it:
+// var el = document.getElementById("planets");
+
+// planets.forEach(function(planet){
+//   el.innerHTML += `<div>${planet}</div>`;
+// });
+
+// function something(planet) {
+
+// }
+// planets.forEach(something);
 
 // Use the map method to create a new array where the first letter of each planet is capitalized
 function cap(word){
@@ -27,6 +39,11 @@ function cap(word){
 var titleCase = planets.map(cap);
 console.log("Array in title case: ", titleCase);
 
+//A shorter way to do it:
+// var planetsCapitalized = planets.map(function(planets){
+// 	return planets.charAt(0).toUpperCase() + planets.slice(1);
+// });
+// console.log(planetsCapitalized);
 
 // Use the filter method to create a new array that contains planets with the letter 'e'
 
